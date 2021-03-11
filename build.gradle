@@ -1,5 +1,6 @@
 // Copyright 2000-2021 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 apply plugin: 'java'
+apply plugin: 'pmd'
 
 compileJava {
   sourceCompatibility '11'
@@ -15,6 +16,11 @@ repositories { mavenCentral() }
 dependencies {
   testCompile 'junit:junit:4.12'
   testCompile 'org.assertj:assertj-core:3.12.2'
+}
+
+pmd {
+    ignoreFailures = true
+    toolVersion = "6.8.0"
 }
 
 jar {
